@@ -135,19 +135,20 @@ function ManageInterview() {
 
   const handleCredit = (id) => {
     const values = {
-      id
-    }
-    axios.post(`/api/interviewer/wallet/${id}`, values, {
-      headers: {
-        authToken: localStorage.getItem("admintoken"),
-      },
-    })
-    .then(res=>{
-      setInterviews(res.data.interviews);
-    })
-    .catch(err=>{
-      console.log(err)
-    })
+      id,
+    };
+    axios
+      .post(`/api/interviewer/wallet/${id}`, values, {
+        headers: {
+          authToken: localStorage.getItem("admintoken"),
+        },
+      })
+      .then((res) => {
+        setInterviews(res.data.interviews);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
@@ -308,14 +309,22 @@ function ManageInterview() {
                     align="center"
                     sx={{ fontSize: "0.9rem", width: 150 }}
                   >
-                    {
-                      data?.creditStatus ? 
-                      (
-                        <Button variant="contained" disabled>Credited</Button>
-                      ) : (
-                        <Button onClick={()=>handleCredit(data._id)} variant="contained">Not Credited</Button>
-                      )
-                    }
+                    {data?.creditStatus ? (
+                      <Button variant="contained" disabled>
+                        Credited
+                      </Button>
+                    ) : data?.status !== "Cancelled" ? (
+                      <Button
+                        onClick={() => handleCredit(data._id)}
+                        variant="contained"
+                      >
+                        Not Credited
+                      </Button>
+                    ) : (
+                      <Button variant="contained" disabled>
+                        Cancelled
+                      </Button>
+                    )}
                   </TableCell>
                 </TableRow>
               ))}

@@ -89,7 +89,7 @@ function UpdateInterviewer() {
   };
 
   const handleCloseClick = () => {
-    navigate("/admin/user");
+    navigate("/admin/interviewer");
   };
 
   return (
