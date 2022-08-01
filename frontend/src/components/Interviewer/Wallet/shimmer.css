@@ -1,0 +1,60 @@
+.shimmer {
+    color: rgba(255, 255, 255, 0.086);
+    background: -webkit-gradient(linear, left top, right top, from(rgb(0, 0, 0)), to(#222), color-stop(0.5, rgba(255, 255, 255, 0.898)));
+    background: -moz-gradient(linear, left top, right top, from(rgb(0, 0, 0)), to(#222), color-stop(0.5, rgba(255, 255, 255, 0.898)));
+    background: gradient(linear, left top, right top, from(rgb(0, 0, 0)), to(#222), color-stop(0.5, rgba(255, 255, 255, 0.898)));
+    -webkit-background-size: 40px 100%;
+    -moz-background-size: 40px 100%;
+    background-size: 40px 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-animation-name: shimmer;
+    -moz-animation-name: shimmer;
+    animation-name: shimmer;
+    -webkit-animation-duration: 3s;
+    -moz-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-color: rgb(0, 0, 0);
+}
+
+@-moz-keyframes shimmer {
+    0% {
+            background-position: top left;
+    }
+    100% {
+            background-position: top right;
+    }
+}
+
+@-webkit-keyframes shimmer {
+    0% {
+            background-position: top left;
+    }
+    100% {
+            background-position: top right;
+    }
+}
+
+@-o-keyframes shimmer {
+    0% {
+            background-position: top left;
+    }
+    100% {
+            background-position: top right;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+            background-position: top left;
+    }
+    100% {
+            background-position: top right;
+    }
+}
